@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/30 21:29:31 by sgamraou          #+#    #+#             */
-/*   Updated: 2021/12/06 21:01:19 by sgamraou         ###   ########.fr       */
+/*   Updated: 2021/12/06 22:19:21 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,10 @@ char *get_left(char *buffer)
 	}
 	left = malloc(ft_strlen(buffer) - i + 1);
 	if (!left)
-	{
-		free (left);
 		return (NULL);
-	}
 	i++;
 	while (buffer[i])
-	{
 		left[j++] = buffer[i++];
-	}
 	left[j] = '\0';
 	free(buffer);
 	return (left);
@@ -102,7 +97,7 @@ char	*get_next_line(int fd)
 	if (perm_hold[0] == '\0')
 	{
 		free(perm_hold);
-		perm_hold = NULL;
+		perm_hold = NULL;// preventing double free
 		return (NULL);
 	}
 	line = get_line(perm_hold);
@@ -117,6 +112,8 @@ char	*get_next_line(int fd)
 // 	// 	printf("%s\n", get_next_line(fd));
 // 	// printf("%s\n", get_next_line(fd));
 // 	printf("%s\n", get_next_line(fd));
+// 	printf("%s\n", get_next_line(fd));
+
 // 	return 0;
 // }
 

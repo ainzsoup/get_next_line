@@ -6,7 +6,7 @@
 /*   By: sgamraou <sgamraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 21:07:52 by sgamraou          #+#    #+#             */
-/*   Updated: 2021/12/06 17:37:42 by sgamraou         ###   ########.fr       */
+/*   Updated: 2021/12/06 22:21:20 by sgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	j = 0;
 	new = (char *)malloc(sizeof(char) * (len));
 	if (!new)
-	{
-		free(new);
 		return (NULL);
-	}
 	while (s1[i])
 	{
 		new[i] = s1[i];
